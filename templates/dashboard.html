@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Health Dashboard</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        /* Custom styles to integrate Inter font with Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-700">
+    <div class="flex h-full">
+        <!-- Sidebar Navigation (Placeholder) -->
+        <aside class="w-64 bg-slate-900 text-white p-6 flex-shrink-0 hidden md:flex flex-col">
+            <div class="flex items-center gap-3 mb-10">
+            <!--   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <h1 class="text-2xl font-bold tracking-tight">HealthTrack</h1>
+            </div>
+            <nav class="flex-grow">
+                <ul class="space-y-3">
+                    <li><a href="#" class="flex items-center gap-3 bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-lg font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>Dashboard</a></li>
+                    <li><a href="#" class="flex items-center gap-3 hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Patients</a></li>
+                    <li><a href="#" class="flex items-center gap-3 hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>Analytics</a></li>
+                    <li><a href="#" class="flex items-center gap-3 hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-4.44a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.88Z"/><path d="M16 2v6h6"/><path d="M10 13H8"/><path d="M16 13h-2"/><path d="M16 17h-2"/><path d="M10 17H8"/><path d="m14 15-2-2-2 2"/><path d="m10 15 2 2 2-2"/></svg>Reports</a></li>
+                </ul>
+            </nav>
+            <div class="mt-auto">
+                 <a href="#" class="flex items-center gap-3 hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 21.7a1.94 1.94 0 0 0-3.4 0"/><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="2" y2="4"/><line x1="21.17" x2="19.05" y1="4.83" y2="6.95"/><line x1="22" x2="20" y1="12" y2="12"/><line x1="21.17" x2="19.05" y1="19.17" y2="17.05"/><line x1="12" x2="12" y1="22" y2="20"/><line x1="2.83" x2="4.95" y1="19.17" y2="17.05"/><line x1="2" x2="4" y1="12" y2="12"/><line x1="2.83" x2="4.95" y1="4.83" y2="6.95"/></svg>Settings</a>
+            </div>-->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-8">
+            <header class="mb-8">
+                <h1 class="text-3xl font-bold text-slate-800">Epidemiological Geo-mapping</h1>
+                <p class="text-slate-500 mt-1">Analysis of Air Quality Index and COPD Burden in Chittoor-District</p>
+            </header>
+
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                <!-- Map Card -->
+                <section class="bg-white p-6 rounded-2xl shadow-lg xl:col-span-2">
+                    <h2 class="text-xl font-semibold mb-4 text-slate-800">Patient Locations</h2>
+                    <div class="w-full h-96 rounded-xl overflow-hidden relative">
+                        <iframe src="{{ url_for('map_page') }}" class="absolute top-0 left-0 w-full h-full border-none"></iframe>
+                    </div>
+                </section>
+                
+                <!-- Revenue Division Card -->
+                <section class="bg-white p-6 rounded-2xl shadow-lg">
+                    <h2 class="text-xl font-semibold mb-4 text-slate-800">Distribution by Revenue Division</h2>
+                    <div class="h-96 flex items-center justify-center">
+                        <canvas id="revenueDonutChart"></canvas>
+                    </div>
+                </section>
+                
+                <!-- Age Group Card -->
+                <section class="bg-white p-6 rounded-2xl shadow-lg xl:col-span-2">
+                    <h2 class="text-xl font-semibold mb-4 text-slate-800">Patients by Age Group</h2>
+                    <div class="h-80">
+                         <canvas id="ageChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- AQI Range Card -->
+                <section class="bg-white p-6 rounded-2xl shadow-lg">
+                    <h2 class="text-xl font-semibold mb-4 text-slate-800">Patients by AQI Range</h2>
+                     <div class="h-80">
+                         <canvas id="aqiLineChart"></canvas>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Global Chart.js configuration for fonts
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.font.weight = '500';
+
+        // Age Group Bar Chart
+        const ageGroups = {{ age_groups | tojson }};
+        const chartLabels = Object.keys(ageGroups);
+        const chartData = Object.values(ageGroups);
+        const ageCtx = document.getElementById('ageChart').getContext('2d');
+        new Chart(ageCtx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(ageGroups),
+                datasets: [{
+                    label: 'Total Patients',
+                    data: Object.values(ageGroups),
+                    backgroundColor: [
+                        '#4dd0e1','#4fc3f7','#64b5f6','#ef5350',
+                        '#ffca28','#81c784','#ba68c8','#ff8a65'
+                    ], // sky-600 with opacity
+                    borderColor: 'rgb(2, 132, 199)',
+                    borderWidth: 2,
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#0f172a', // slate-900
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 12 },
+                        padding: 10,
+                        cornerRadius: 8,
+                        displayColors: false,
+                    }
+                },
+                scales: {
+                    y: { 
+                        beginAtZero: true, 
+                        grid: { color: '#e2e8f0' /* slate-200 */ },
+                        ticks: { color: '#64748b' /* slate-500 */ },
+                        title: { display: true, text: 'Total Patients', color: '#334155' /* slate-700 */ } 
+                    },
+                    x: { 
+                        grid: { display: false },
+                        ticks: { color: '#64748b' /* slate-500 */ },
+                        title: { display: true, text: 'Age Group', color: '#334155' /* slate-700 */ } 
+                    }
+                }
+            }
+        });
+
+        // Revenue Division Donut Chart
+        const revenueData = { "Chittoor": 38, "Palamner": 25, "Nagari": 18, "Kuppam": 19 };
+        const revenueCtx = document.getElementById('revenueDonutChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'doughnut',
+            data: {
+                labels: Object.keys(revenueData),
+                datasets: [{
+                    data: Object.values(revenueData),
+                    backgroundColor: ['#06b6d4', '#f43f5e', '#facc15', '#4ade80'],
+                    borderColor: '#f1f5f9', // Chart background color for spacing
+                    borderWidth: 4,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#334155' } },
+                    tooltip: {
+                        backgroundColor: '#0f172a',
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 12 },
+                        padding: 10,
+                        cornerRadius: 8,
+                    }
+                }
+            }
+        });
+
+        // AQI Range Line Chart
+        const aqiData = { "70-75": 0, "75-80": 4, "80-85": 19, "85-90": 10, "90-95": 14, "95-100": 7, "100-105": 9 };
+        const aqiCtx = document.getElementById('aqiLineChart').getContext('2d');
+        new Chart(aqiCtx, {
+            type: 'line',
+            data: {
+                labels: Object.keys(aqiData),
+                datasets: [{
+                    label: 'Patient Count',
+                    data: Object.values(aqiData),
+                    fill: true,
+                    backgroundColor: 'rgba(14, 165, 233, 0.1)', // sky-500 with opacity
+                    borderColor: '#0ea5e9', // sky-500
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#0ea5e9',
+                    pointBorderColor: '#fff',
+                    pointHoverRadius: 7,
+                    pointHoverBorderWidth: 2,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                     tooltip: {
+                        backgroundColor: '#0f172a',
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 12 },
+                        padding: 10,
+                        cornerRadius: 8,
+                        displayColors: false,
+                    }
+                },
+                scales: {
+                    y: { 
+                        beginAtZero: true, 
+                        grid: { color: '#e2e8f0' },
+                        ticks: { color: '#64748b' },
+                        title: { display: true, text: 'Patient Count', color: '#334155' } 
+                    },
+                    x: { 
+                        grid: { display: false },
+                        ticks: { color: '#64748b' },
+                        title: { display: true, text: 'AQI Range', color: '#334155' } 
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

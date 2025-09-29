@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ebc25c815aaa3d4ea0676c39b06fa6bf {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ebc25c815aaa3d4ea0676c39b06fa6bf" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ebc25c815aaa3d4ea0676c39b06fa6bf = L.map(
+                "map_ebc25c815aaa3d4ea0676c39b06fa6bf",
+                {
+                    center: [20.5937, 78.9629],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_12216669b1e5ba35b71267a36c17dedc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_12216669b1e5ba35b71267a36c17dedc.addTo(map_ebc25c815aaa3d4ea0676c39b06fa6bf);
+        
+    
+            var marker_cluster_2b6957e5deee5ab96a82c1202c16b503 = L.markerClusterGroup(
+                {
+}
+            );
+            marker_cluster_2b6957e5deee5ab96a82c1202c16b503.options.iconCreateFunction =
+                function(cluster) {
+            var count = cluster.getChildCount();
+            var color = 'blue';
+            if (count < 5) color = 'green';
+            else if (count < 10) color = 'orange';
+            else color = 'red';
+            return new L.DivIcon({
+                html: '<div style="background-color:'+color+';border-radius:50%;padding:10px;color:white;">'+count+'</div>',
+                className: 'marker-cluster'
+            });
+        };
+        
+    
+            var marker_3af93ea97443071cb5a970188b440b11 = L.marker(
+                [13.4336161, 78.6902755],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_46c9de94e7b055ce639bde64bce619c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0ef5843b0e27fbe8c3ec2a2551e393d = $(`<div id="html_d0ef5843b0e27fbe8c3ec2a2551e393d" style="width: 100.0%; height: 100.0%;"><b>Yasodhara</b><br>Age: 55<br>Diagnosis: COPD</div>`)[0];
+                popup_46c9de94e7b055ce639bde64bce619c7.setContent(html_d0ef5843b0e27fbe8c3ec2a2551e393d);
+            
+        
+
+        marker_3af93ea97443071cb5a970188b440b11.bindPopup(popup_46c9de94e7b055ce639bde64bce619c7)
+        ;
+
+        
+    
+    
+            var marker_a75e373f489fba82729a91e507ec1bfd = L.marker(
+                [13.3856589, 78.984157],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_9fbf5375245d0f4d63ce59263a824811 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ecf7b19dcfa284e1eaa00dda3f6eca5 = $(`<div id="html_5ecf7b19dcfa284e1eaa00dda3f6eca5" style="width: 100.0%; height: 100.0%;"><b>Shaik Naseena</b><br>Age: 30<br>Diagnosis: COPD</div>`)[0];
+                popup_9fbf5375245d0f4d63ce59263a824811.setContent(html_5ecf7b19dcfa284e1eaa00dda3f6eca5);
+            
+        
+
+        marker_a75e373f489fba82729a91e507ec1bfd.bindPopup(popup_9fbf5375245d0f4d63ce59263a824811)
+        ;
+
+        
+    
+    
+            var marker_08036a7321fd049b49470ce41dc1ef90 = L.marker(
+                [13.6346441, 79.4167231],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_794c1c790160ada751bfb44d5424eee4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b33e256c565e38860da4978174b01e3 = $(`<div id="html_3b33e256c565e38860da4978174b01e3" style="width: 100.0%; height: 100.0%;"><b>U Nirmala</b><br>Age: 50<br>Diagnosis: COPD</div>`)[0];
+                popup_794c1c790160ada751bfb44d5424eee4.setContent(html_3b33e256c565e38860da4978174b01e3);
+            
+        
+
+        marker_08036a7321fd049b49470ce41dc1ef90.bindPopup(popup_794c1c790160ada751bfb44d5424eee4)
+        ;
+
+        
+    
+    
+            var marker_732349aa64532d2a9c2c72f8b7622ec2 = L.marker(
+                [13.2775912, 79.035548],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_cbc9b0a745d54f7e7cf23111184655fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_52ea7424e3adb0663fed03659c7c04c5 = $(`<div id="html_52ea7424e3adb0663fed03659c7c04c5" style="width: 100.0%; height: 100.0%;"><b>N Malar</b><br>Age: 46<br>Diagnosis: COPD</div>`)[0];
+                popup_cbc9b0a745d54f7e7cf23111184655fc.setContent(html_52ea7424e3adb0663fed03659c7c04c5);
+            
+        
+
+        marker_732349aa64532d2a9c2c72f8b7622ec2.bindPopup(popup_cbc9b0a745d54f7e7cf23111184655fc)
+        ;
+
+        
+    
+    
+            var marker_ed62d85058649644ac2520776429e19c = L.marker(
+                [13.2307967, 79.1808566],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_59dcdd9f3de6993df7b35dc8adc216cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae01dde4845aaad300ea2e16dbf57e19 = $(`<div id="html_ae01dde4845aaad300ea2e16dbf57e19" style="width: 100.0%; height: 100.0%;"><b>K. Kamalamma</b><br>Age: 57<br>Diagnosis: COPD</div>`)[0];
+                popup_59dcdd9f3de6993df7b35dc8adc216cc.setContent(html_ae01dde4845aaad300ea2e16dbf57e19);
+            
+        
+
+        marker_ed62d85058649644ac2520776429e19c.bindPopup(popup_59dcdd9f3de6993df7b35dc8adc216cc)
+        ;
+
+        
+    
+    
+            var marker_e3dc3308d2f912fdf2645d7425744828 = L.marker(
+                [13.3371478, 79.4396687],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_7057c859341b053ccd9bb22ebd6123be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_850bc83ca4ff4186abe8973b80e997fb = $(`<div id="html_850bc83ca4ff4186abe8973b80e997fb" style="width: 100.0%; height: 100.0%;"><b>T. Yashodhara</b><br>Age: 56<br>Diagnosis: COPD</div>`)[0];
+                popup_7057c859341b053ccd9bb22ebd6123be.setContent(html_850bc83ca4ff4186abe8973b80e997fb);
+            
+        
+
+        marker_e3dc3308d2f912fdf2645d7425744828.bindPopup(popup_7057c859341b053ccd9bb22ebd6123be)
+        ;
+
+        
+    
+    
+            var marker_db8100cd1bf074f73a2ab75db6fd1116 = L.marker(
+                [13.2496138, 79.4370799],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_8a5336bbe9542dc710e2793731e5319d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_381d0cfe2cf312c18dcf52760f9fb76a = $(`<div id="html_381d0cfe2cf312c18dcf52760f9fb76a" style="width: 100.0%; height: 100.0%;"><b>T. Madhu</b><br>Age: 42<br>Diagnosis: COPD</div>`)[0];
+                popup_8a5336bbe9542dc710e2793731e5319d.setContent(html_381d0cfe2cf312c18dcf52760f9fb76a);
+            
+        
+
+        marker_db8100cd1bf074f73a2ab75db6fd1116.bindPopup(popup_8a5336bbe9542dc710e2793731e5319d)
+        ;
+
+        
+    
+    
+            var marker_eb5a593cc19b649014f02eb4f565a870 = L.marker(
+                [13.0496142, 79.3071196],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_9cbccffdc5262fa70efb23d9087f5a46 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_120ce04f950d4cfab81fc33a7f5577c3 = $(`<div id="html_120ce04f950d4cfab81fc33a7f5577c3" style="width: 100.0%; height: 100.0%;"><b>P. Sigarawwa</b><br>Age: 78<br>Diagnosis: COPD</div>`)[0];
+                popup_9cbccffdc5262fa70efb23d9087f5a46.setContent(html_120ce04f950d4cfab81fc33a7f5577c3);
+            
+        
+
+        marker_eb5a593cc19b649014f02eb4f565a870.bindPopup(popup_9cbccffdc5262fa70efb23d9087f5a46)
+        ;
+
+        
+    
+    
+            var marker_ed011067b7aa2efaa17653e5c6a05887 = L.marker(
+                [13.3677436, 79.1957638],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_63abd9134685e00e1f8e301d0660dc40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e6e9d136c3d27e3c49c120263d6ccfe8 = $(`<div id="html_e6e9d136c3d27e3c49c120263d6ccfe8" style="width: 100.0%; height: 100.0%;"><b>E. Kamalamma</b><br>Age: 73<br>Diagnosis: COPD</div>`)[0];
+                popup_63abd9134685e00e1f8e301d0660dc40.setContent(html_e6e9d136c3d27e3c49c120263d6ccfe8);
+            
+        
+
+        marker_ed011067b7aa2efaa17653e5c6a05887.bindPopup(popup_63abd9134685e00e1f8e301d0660dc40)
+        ;
+
+        
+    
+    
+            var marker_97175e2d91abefc29695252e7036fa4a = L.marker(
+                [13.4505508, 79.1148336],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_df1f625ffcf91c0ba9120b4a4e043a83 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93d0b39b004a9ac635e8e4902932ee91 = $(`<div id="html_93d0b39b004a9ac635e8e4902932ee91" style="width: 100.0%; height: 100.0%;"><b>N. Parameswari</b><br>Age: 32<br>Diagnosis: COPD</div>`)[0];
+                popup_df1f625ffcf91c0ba9120b4a4e043a83.setContent(html_93d0b39b004a9ac635e8e4902932ee91);
+            
+        
+
+        marker_97175e2d91abefc29695252e7036fa4a.bindPopup(popup_df1f625ffcf91c0ba9120b4a4e043a83)
+        ;
+
+        
+    
+    
+            var marker_a55ffe5a90ab2f3384023d8a4dde4ce8 = L.marker(
+                [13.3856589, 78.984157],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_9ce480120f91eacf82ca02422c3cd8f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a96280b1eb38d9d27fd658174501aef = $(`<div id="html_6a96280b1eb38d9d27fd658174501aef" style="width: 100.0%; height: 100.0%;"><b>N. Thaugarajulu</b><br>Age: 55<br>Diagnosis: COPD</div>`)[0];
+                popup_9ce480120f91eacf82ca02422c3cd8f7.setContent(html_6a96280b1eb38d9d27fd658174501aef);
+            
+        
+
+        marker_a55ffe5a90ab2f3384023d8a4dde4ce8.bindPopup(popup_9ce480120f91eacf82ca02422c3cd8f7)
+        ;
+
+        
+    
+    
+            var marker_d81dab6ff3985d7457975456d70664cf = L.marker(
+                [13.2172336, 79.1118384],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_555f54da2415659f0cf1ead308a4d322 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e9ae44a17387a73514ba5d2c8865bae = $(`<div id="html_5e9ae44a17387a73514ba5d2c8865bae" style="width: 100.0%; height: 100.0%;"><b>M. Lakshmi</b><br>Age: 60<br>Diagnosis: COPD</div>`)[0];
+                popup_555f54da2415659f0cf1ead308a4d322.setContent(html_5e9ae44a17387a73514ba5d2c8865bae);
+            
+        
+
+        marker_d81dab6ff3985d7457975456d70664cf.bindPopup(popup_555f54da2415659f0cf1ead308a4d322)
+        ;
+
+        
+    
+    
+            var marker_4dcca1c78286ca64fa3695b464e2c7cd = L.marker(
+                [13.3856589, 78.984157],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_c0b28c56a5e8ecdbb302f461f0b4170d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39de9da662e53dd8dba0fb620f14002c = $(`<div id="html_39de9da662e53dd8dba0fb620f14002c" style="width: 100.0%; height: 100.0%;"><b>K. Mounika</b><br>Age: 36<br>Diagnosis: COPD</div>`)[0];
+                popup_c0b28c56a5e8ecdbb302f461f0b4170d.setContent(html_39de9da662e53dd8dba0fb620f14002c);
+            
+        
+
+        marker_4dcca1c78286ca64fa3695b464e2c7cd.bindPopup(popup_c0b28c56a5e8ecdbb302f461f0b4170d)
+        ;
+
+        
+    
+    
+            var marker_74baf9cf21f2a9254fdd53757a9c53ad = L.marker(
+                [13.2307967, 79.1808566],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_501c106f1ad9592a3df844b8a0e6665b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72cca6ceb1919c308e583563e47806a3 = $(`<div id="html_72cca6ceb1919c308e583563e47806a3" style="width: 100.0%; height: 100.0%;"><b>S. Asunn Bee</b><br>Age: 55<br>Diagnosis: COPD</div>`)[0];
+                popup_501c106f1ad9592a3df844b8a0e6665b.setContent(html_72cca6ceb1919c308e583563e47806a3);
+            
+        
+
+        marker_74baf9cf21f2a9254fdd53757a9c53ad.bindPopup(popup_501c106f1ad9592a3df844b8a0e6665b)
+        ;
+
+        
+    
+    
+            var marker_a3bfc760663294acb913806eb24d3e04 = L.marker(
+                [13.2008143, 78.7440118],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_e9ab5a91f046f786ab1b0f1f4baaf96c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1ab5ddf5f9e5ce0032fd7415627c685 = $(`<div id="html_f1ab5ddf5f9e5ce0032fd7415627c685" style="width: 100.0%; height: 100.0%;"><b>Syamala</b><br>Age: 34<br>Diagnosis: COPD</div>`)[0];
+                popup_e9ab5a91f046f786ab1b0f1f4baaf96c.setContent(html_f1ab5ddf5f9e5ce0032fd7415627c685);
+            
+        
+
+        marker_a3bfc760663294acb913806eb24d3e04.bindPopup(popup_e9ab5a91f046f786ab1b0f1f4baaf96c)
+        ;
+
+        
+    
+    
+            var marker_371c0faf107cfd511aa3c49ddaf4eee2 = L.marker(
+                [13.543315, 79.0079949],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_d23decb1f1d1c175867a4373061e9e7d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d7c5755333ef02a9354f1e7f1f28f79 = $(`<div id="html_5d7c5755333ef02a9354f1e7f1f28f79" style="width: 100.0%; height: 100.0%;"><b>Rani</b><br>Age: 70<br>Diagnosis: COPD</div>`)[0];
+                popup_d23decb1f1d1c175867a4373061e9e7d.setContent(html_5d7c5755333ef02a9354f1e7f1f28f79);
+            
+        
+
+        marker_371c0faf107cfd511aa3c49ddaf4eee2.bindPopup(popup_d23decb1f1d1c175867a4373061e9e7d)
+        ;
+
+        
+    
+    
+            var marker_3fc2203d7bc07debfea51fc600692d84 = L.marker(
+                [12.9526638, 78.8721197],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_e8d63f8c49bcb7037d172c6d6d0ca45f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24448d3e6274925f95c7dd7849144068 = $(`<div id="html_24448d3e6274925f95c7dd7849144068" style="width: 100.0%; height: 100.0%;"><b>Rameeza Bee</b><br>Age: 58<br>Diagnosis: COPD</div>`)[0];
+                popup_e8d63f8c49bcb7037d172c6d6d0ca45f.setContent(html_24448d3e6274925f95c7dd7849144068);
+            
+        
+
+        marker_3fc2203d7bc07debfea51fc600692d84.bindPopup(popup_e8d63f8c49bcb7037d172c6d6d0ca45f)
+        ;
+
+        
+    
+    
+            var marker_417ade54030a082c387aaa4da21c652b = L.marker(
+                [13.3343094, 78.9175088],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_745cf16160b188067eac70f5b958dc2e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c8639749aa14d43fe556bd1880178594 = $(`<div id="html_c8639749aa14d43fe556bd1880178594" style="width: 100.0%; height: 100.0%;"><b>N. Leelavathi</b><br>Age: 40<br>Diagnosis: COPD</div>`)[0];
+                popup_745cf16160b188067eac70f5b958dc2e.setContent(html_c8639749aa14d43fe556bd1880178594);
+            
+        
+
+        marker_417ade54030a082c387aaa4da21c652b.bindPopup(popup_745cf16160b188067eac70f5b958dc2e)
+        ;
+
+        
+    
+    
+            var marker_6e8e7e6bfc75ba968b2f4c5ceab2dcfa = L.marker(
+                [13.2307967, 79.1808566],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_b85790b65fac9c76630bab4ce95002cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec6a15d4fb21467f2d748797b29173bd = $(`<div id="html_ec6a15d4fb21467f2d748797b29173bd" style="width: 100.0%; height: 100.0%;"><b>Salma</b><br>Age: 37<br>Diagnosis: COPD</div>`)[0];
+                popup_b85790b65fac9c76630bab4ce95002cb.setContent(html_ec6a15d4fb21467f2d748797b29173bd);
+            
+        
+
+        marker_6e8e7e6bfc75ba968b2f4c5ceab2dcfa.bindPopup(popup_b85790b65fac9c76630bab4ce95002cb)
+        ;
+
+        
+    
+    
+            var marker_6fa6b0abf47e7623f830589b8c243277 = L.marker(
+                [13.1954511, 78.91195870000001],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_08949a16bd6c1606d6cec79453973958 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a423cfbcd07d2f1c4d9995ce66b057b4 = $(`<div id="html_a423cfbcd07d2f1c4d9995ce66b057b4" style="width: 100.0%; height: 100.0%;"><b>Dhanarani</b><br>Age: 55<br>Diagnosis: COPD</div>`)[0];
+                popup_08949a16bd6c1606d6cec79453973958.setContent(html_a423cfbcd07d2f1c4d9995ce66b057b4);
+            
+        
+
+        marker_6fa6b0abf47e7623f830589b8c243277.bindPopup(popup_08949a16bd6c1606d6cec79453973958)
+        ;
+
+        
+    
+    
+            var marker_5eb6acbae1ce8c715a53209223b9b84a = L.marker(
+                [13.2194204, 78.6341996],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_516b789d84cb25d6a877efd0b5bfc270 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84ece88d6cf0d1b69ba28db7b4cd7d7e = $(`<div id="html_84ece88d6cf0d1b69ba28db7b4cd7d7e" style="width: 100.0%; height: 100.0%;"><b>Vasanthe</b><br>Age: 56<br>Diagnosis: COPD</div>`)[0];
+                popup_516b789d84cb25d6a877efd0b5bfc270.setContent(html_84ece88d6cf0d1b69ba28db7b4cd7d7e);
+            
+        
+
+        marker_5eb6acbae1ce8c715a53209223b9b84a.bindPopup(popup_516b789d84cb25d6a877efd0b5bfc270)
+        ;
+
+        
+    
+    
+            var marker_3279978b1acdf9b4b2d649f659eeeb23 = L.marker(
+                [13.2825712, 79.60950079999999],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_2d8688db8e44f3430725cf3f9320d683 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_352f7c84a274022ecae79ec3feb96ab9 = $(`<div id="html_352f7c84a274022ecae79ec3feb96ab9" style="width: 100.0%; height: 100.0%;"><b>Ranike</b><br>Age: 70<br>Diagnosis: COPD</div>`)[0];
+                popup_2d8688db8e44f3430725cf3f9320d683.setContent(html_352f7c84a274022ecae79ec3feb96ab9);
+            
+        
+
+        marker_3279978b1acdf9b4b2d649f659eeeb23.bindPopup(popup_2d8688db8e44f3430725cf3f9320d683)
+        ;
+
+        
+    
+    
+            var marker_dc6b9656ab3e66bbe1044bbeb36f038f = L.marker(
+                [13.476537, 78.8081964],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_767bac4a6189667f0f6e39f3bfd6a35d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05274bdf94acbb80eb33c568faa9c80e = $(`<div id="html_05274bdf94acbb80eb33c568faa9c80e" style="width: 100.0%; height: 100.0%;"><b>Pramella</b><br>Age: 48<br>Diagnosis: COPD</div>`)[0];
+                popup_767bac4a6189667f0f6e39f3bfd6a35d.setContent(html_05274bdf94acbb80eb33c568faa9c80e);
+            
+        
+
+        marker_dc6b9656ab3e66bbe1044bbeb36f038f.bindPopup(popup_767bac4a6189667f0f6e39f3bfd6a35d)
+        ;
+
+        
+    
+    
+            var marker_16fe45bcfcc94a776c5228b5b9f5f808 = L.marker(
+                [13.3677436, 79.1957638],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_797f8089ac1ed760c43fcc7e3dc78fe6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d269fed9958ac9f1ce91f80985312b64 = $(`<div id="html_d269fed9958ac9f1ce91f80985312b64" style="width: 100.0%; height: 100.0%;"><b>K. Lakshmi</b><br>Age: 46<br>Diagnosis: COPD</div>`)[0];
+                popup_797f8089ac1ed760c43fcc7e3dc78fe6.setContent(html_d269fed9958ac9f1ce91f80985312b64);
+            
+        
+
+        marker_16fe45bcfcc94a776c5228b5b9f5f808.bindPopup(popup_797f8089ac1ed760c43fcc7e3dc78fe6)
+        ;
+
+        
+    
+    
+            var marker_58379005e5e4b3443c1409b78e9e8f0c = L.marker(
+                [13.2119425, 79.1120494],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_aa05dc18aa8685aa9d2c5959ac01e975 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2da23550aa379e480e6ed03b3f46a734 = $(`<div id="html_2da23550aa379e480e6ed03b3f46a734" style="width: 100.0%; height: 100.0%;"><b>Ramya</b><br>Age: 36<br>Diagnosis: COPD</div>`)[0];
+                popup_aa05dc18aa8685aa9d2c5959ac01e975.setContent(html_2da23550aa379e480e6ed03b3f46a734);
+            
+        
+
+        marker_58379005e5e4b3443c1409b78e9e8f0c.bindPopup(popup_aa05dc18aa8685aa9d2c5959ac01e975)
+        ;
+
+        
+    
+    
+            var marker_c7aa7649cf6fab07ac4a47580198e8de = L.marker(
+                [13.2289686, 79.1852413],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_b22da4df75f417e55e866730649bc45a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e8a0fed80462601a7ef05c844aea6044 = $(`<div id="html_e8a0fed80462601a7ef05c844aea6044" style="width: 100.0%; height: 100.0%;"><b>Madhavp</b><br>Age: 44<br>Diagnosis: COPD</div>`)[0];
+                popup_b22da4df75f417e55e866730649bc45a.setContent(html_e8a0fed80462601a7ef05c844aea6044);
+            
+        
+
+        marker_c7aa7649cf6fab07ac4a47580198e8de.bindPopup(popup_b22da4df75f417e55e866730649bc45a)
+        ;
+
+        
+    
+    
+            var marker_58ba730cf8fa1988e824f1f5d817abd8 = L.marker(
+                [13.3500392, 78.7589558],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_a49574d69929420fc139d70e96d2a797 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae1c5c06f3fbc64a233984313b624fad = $(`<div id="html_ae1c5c06f3fbc64a233984313b624fad" style="width: 100.0%; height: 100.0%;"><b>L. Mamatha</b><br>Age: 45<br>Diagnosis: COPD</div>`)[0];
+                popup_a49574d69929420fc139d70e96d2a797.setContent(html_ae1c5c06f3fbc64a233984313b624fad);
+            
+        
+
+        marker_58ba730cf8fa1988e824f1f5d817abd8.bindPopup(popup_a49574d69929420fc139d70e96d2a797)
+        ;
+
+        
+    
+    
+            var marker_776b63f76ebbae65ed21253719fc564f = L.marker(
+                [13.1590292, 79.0387162],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_7fd93b4d2f9896f27c1b2a018f84af10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe97e45e79c7a8887fbed06254181665 = $(`<div id="html_fe97e45e79c7a8887fbed06254181665" style="width: 100.0%; height: 100.0%;"><b>Kannemma</b><br>Age: 46<br>Diagnosis: COPD</div>`)[0];
+                popup_7fd93b4d2f9896f27c1b2a018f84af10.setContent(html_fe97e45e79c7a8887fbed06254181665);
+            
+        
+
+        marker_776b63f76ebbae65ed21253719fc564f.bindPopup(popup_7fd93b4d2f9896f27c1b2a018f84af10)
+        ;
+
+        
+    
+    
+            var marker_97e81b11a8494074233b49bff8deb993 = L.marker(
+                [13.3677436, 79.1957638],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_f2b01aeeab10bf88385eb7bc4109725e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c8c9a911d25296ba899004479ccd1bee = $(`<div id="html_c8c9a911d25296ba899004479ccd1bee" style="width: 100.0%; height: 100.0%;"><b>P. Susela</b><br>Age: 54<br>Diagnosis: COPD</div>`)[0];
+                popup_f2b01aeeab10bf88385eb7bc4109725e.setContent(html_c8c9a911d25296ba899004479ccd1bee);
+            
+        
+
+        marker_97e81b11a8494074233b49bff8deb993.bindPopup(popup_f2b01aeeab10bf88385eb7bc4109725e)
+        ;
+
+        
+    
+    
+            var marker_8c1a298046c6c95f095bc6d2ddb45308 = L.marker(
+                [13.1954511, 78.91195870000001],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_1dfd620e3f73ae10ed4f202d46ead84f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_adf1851643b92e70ae864b083391ab0f = $(`<div id="html_adf1851643b92e70ae864b083391ab0f" style="width: 100.0%; height: 100.0%;"><b>M Adhemma</b><br>Age: 70<br>Diagnosis: COPD</div>`)[0];
+                popup_1dfd620e3f73ae10ed4f202d46ead84f.setContent(html_adf1851643b92e70ae864b083391ab0f);
+            
+        
+
+        marker_8c1a298046c6c95f095bc6d2ddb45308.bindPopup(popup_1dfd620e3f73ae10ed4f202d46ead84f)
+        ;
+
+        
+    
+    
+            var marker_eeaa1ffa4eaf9318a841107d64fc59bc = L.marker(
+                [13.2629492, 79.0094081],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_93ca8b7353c712e111ef6c704c1ec629 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_935c9c13be757b3a5edbfb81598731a7 = $(`<div id="html_935c9c13be757b3a5edbfb81598731a7" style="width: 100.0%; height: 100.0%;"><b>T. Pranedamma</b><br>Age: 64<br>Diagnosis: COPD</div>`)[0];
+                popup_93ca8b7353c712e111ef6c704c1ec629.setContent(html_935c9c13be757b3a5edbfb81598731a7);
+            
+        
+
+        marker_eeaa1ffa4eaf9318a841107d64fc59bc.bindPopup(popup_93ca8b7353c712e111ef6c704c1ec629)
+        ;
+
+        
+    
+    
+            var marker_3e8c7959dff19aaae053a8e5e53b7f6b = L.marker(
+                [13.2354766, 79.1850089],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_c5c617b81d7845e54ee376163e8949bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d147551ad813e40c85c4f93c4904fb53 = $(`<div id="html_d147551ad813e40c85c4f93c4904fb53" style="width: 100.0%; height: 100.0%;"><b>P Meena Kumar</b><br>Age: 44<br>Diagnosis: COPD</div>`)[0];
+                popup_c5c617b81d7845e54ee376163e8949bd.setContent(html_d147551ad813e40c85c4f93c4904fb53);
+            
+        
+
+        marker_3e8c7959dff19aaae053a8e5e53b7f6b.bindPopup(popup_c5c617b81d7845e54ee376163e8949bd)
+        ;
+
+        
+    
+    
+            var marker_e783968e1fb5d44446519eb598c8bb2c = L.marker(
+                [13.1472187, 79.3456403],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_f36a1c97f815adede19aa679d6f8206d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad49144a9a7d5f02e2e4ec0d6b424286 = $(`<div id="html_ad49144a9a7d5f02e2e4ec0d6b424286" style="width: 100.0%; height: 100.0%;"><b>R. Vasantha</b><br>Age: 49<br>Diagnosis: COPD</div>`)[0];
+                popup_f36a1c97f815adede19aa679d6f8206d.setContent(html_ad49144a9a7d5f02e2e4ec0d6b424286);
+            
+        
+
+        marker_e783968e1fb5d44446519eb598c8bb2c.bindPopup(popup_f36a1c97f815adede19aa679d6f8206d)
+        ;
+
+        
+    
+    
+            var marker_a21a33e46c79cd96bb43fc255131878c = L.marker(
+                [13.0907255, 78.60836119999999],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_1ca6c5679e8baca939f443ac2ee68c50 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d993809961637c5c91d6803384dfdfea = $(`<div id="html_d993809961637c5c91d6803384dfdfea" style="width: 100.0%; height: 100.0%;"><b>Swati</b><br>Age: 42<br>Diagnosis: COPD</div>`)[0];
+                popup_1ca6c5679e8baca939f443ac2ee68c50.setContent(html_d993809961637c5c91d6803384dfdfea);
+            
+        
+
+        marker_a21a33e46c79cd96bb43fc255131878c.bindPopup(popup_1ca6c5679e8baca939f443ac2ee68c50)
+        ;
+
+        
+    
+    
+            var marker_0e2a872de65c9040c12903831762001d = L.marker(
+                [13.4628621, 79.3212058],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_3b8b8373b1f6544639a7b93561534431 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_59d40c4970d2d818abe94a0e1bbf2b7a = $(`<div id="html_59d40c4970d2d818abe94a0e1bbf2b7a" style="width: 100.0%; height: 100.0%;"><b>Lakshmamma</b><br>Age: 72<br>Diagnosis: COPD</div>`)[0];
+                popup_3b8b8373b1f6544639a7b93561534431.setContent(html_59d40c4970d2d818abe94a0e1bbf2b7a);
+            
+        
+
+        marker_0e2a872de65c9040c12903831762001d.bindPopup(popup_3b8b8373b1f6544639a7b93561534431)
+        ;
+
+        
+    
+    
+            var marker_882faf8a5ed605e45951a4da41db229c = L.marker(
+                [13.4389701, 79.3176393],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_0da0561d7ae5e9c27d76e09eaec4bd48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86d2db031706e4e8fbc90ce1d134c2ba = $(`<div id="html_86d2db031706e4e8fbc90ce1d134c2ba" style="width: 100.0%; height: 100.0%;"><b>Dheruamma</b><br>Age: 56<br>Diagnosis: COPD</div>`)[0];
+                popup_0da0561d7ae5e9c27d76e09eaec4bd48.setContent(html_86d2db031706e4e8fbc90ce1d134c2ba);
+            
+        
+
+        marker_882faf8a5ed605e45951a4da41db229c.bindPopup(popup_0da0561d7ae5e9c27d76e09eaec4bd48)
+        ;
+
+        
+    
+    
+            var marker_d224c44dcc827e126fd26fb6d5d823a3 = L.marker(
+                [13.4359256, 79.2828158],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_490997ea07fc06425167a6af31d699e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_566f61ffc23599b361af20cf0e9b9d5e = $(`<div id="html_566f61ffc23599b361af20cf0e9b9d5e" style="width: 100.0%; height: 100.0%;"><b>Anudha</b><br>Age: 44<br>Diagnosis: COPD</div>`)[0];
+                popup_490997ea07fc06425167a6af31d699e2.setContent(html_566f61ffc23599b361af20cf0e9b9d5e);
+            
+        
+
+        marker_d224c44dcc827e126fd26fb6d5d823a3.bindPopup(popup_490997ea07fc06425167a6af31d699e2)
+        ;
+
+        
+    
+    
+            var marker_3415109ab600b2e1e89e5736deeac76c = L.marker(
+                [13.4654234, 79.2479342],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_7160b8ef3ae6751534b737607873ade7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_203056cbdced778fe9f2d8d1f12123dc = $(`<div id="html_203056cbdced778fe9f2d8d1f12123dc" style="width: 100.0%; height: 100.0%;"><b>Vasantha</b><br>Age: 57<br>Diagnosis: COPD</div>`)[0];
+                popup_7160b8ef3ae6751534b737607873ade7.setContent(html_203056cbdced778fe9f2d8d1f12123dc);
+            
+        
+
+        marker_3415109ab600b2e1e89e5736deeac76c.bindPopup(popup_7160b8ef3ae6751534b737607873ade7)
+        ;
+
+        
+    
+    
+            var marker_a2e61d371c3fd150c052d136b6f46348 = L.marker(
+                [13.4085099, 79.233132],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_a70dc016a40ebae8b7a6c3d2f8f8745b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_815b97c60e0fcf2f74d796cf87d69c7d = $(`<div id="html_815b97c60e0fcf2f74d796cf87d69c7d" style="width: 100.0%; height: 100.0%;"><b>Gueuamma</b><br>Age: 57<br>Diagnosis: COPD</div>`)[0];
+                popup_a70dc016a40ebae8b7a6c3d2f8f8745b.setContent(html_815b97c60e0fcf2f74d796cf87d69c7d);
+            
+        
+
+        marker_a2e61d371c3fd150c052d136b6f46348.bindPopup(popup_a70dc016a40ebae8b7a6c3d2f8f8745b)
+        ;
+
+        
+    
+    
+            var marker_508c00ce425c7aecf2b4d8171618ff63 = L.marker(
+                [13.3981285, 79.2388326],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_84b1b6d588ef9c8a95c1114f3890bf5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ad8f590d7ed1111907f0737e8845088 = $(`<div id="html_9ad8f590d7ed1111907f0737e8845088" style="width: 100.0%; height: 100.0%;"><b>Soudariyammal</b><br>Age: 74<br>Diagnosis: COPD</div>`)[0];
+                popup_84b1b6d588ef9c8a95c1114f3890bf5a.setContent(html_9ad8f590d7ed1111907f0737e8845088);
+            
+        
+
+        marker_508c00ce425c7aecf2b4d8171618ff63.bindPopup(popup_84b1b6d588ef9c8a95c1114f3890bf5a)
+        ;
+
+        
+    
+    
+            var marker_4c879385eae3847dc2973dfd867209f5 = L.marker(
+                [13.5741144, 79.4805832],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_a3bc3a7a7ccdb7db57de37d15b0c567c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e83b2d217ae12edbe9143d726ee73c2d = $(`<div id="html_e83b2d217ae12edbe9143d726ee73c2d" style="width: 100.0%; height: 100.0%;"><b>S.  Usha</b><br>Age: 47<br>Diagnosis: COPD</div>`)[0];
+                popup_a3bc3a7a7ccdb7db57de37d15b0c567c.setContent(html_e83b2d217ae12edbe9143d726ee73c2d);
+            
+        
+
+        marker_4c879385eae3847dc2973dfd867209f5.bindPopup(popup_a3bc3a7a7ccdb7db57de37d15b0c567c)
+        ;
+
+        
+    
+    
+            var marker_6f6522bab99f99974491ab09b6c5120e = L.marker(
+                [13.244417, 79.21689099999999],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_9517a4a2090508f34cc077d296662d34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_916d5b789a77cd151658c4a8fde86570 = $(`<div id="html_916d5b789a77cd151658c4a8fde86570" style="width: 100.0%; height: 100.0%;"><b>Sauthuni</b><br>Age: 55<br>Diagnosis: COPD</div>`)[0];
+                popup_9517a4a2090508f34cc077d296662d34.setContent(html_916d5b789a77cd151658c4a8fde86570);
+            
+        
+
+        marker_6f6522bab99f99974491ab09b6c5120e.bindPopup(popup_9517a4a2090508f34cc077d296662d34)
+        ;
+
+        
+    
+    
+            var marker_0ad239b23394ac2049371dcf76882a9f = L.marker(
+                [13.5835247, 79.5259184],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_db79a8e82899a5c056e0974b117471f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_809f988da3e833117c331d3ba7cbe2d2 = $(`<div id="html_809f988da3e833117c331d3ba7cbe2d2" style="width: 100.0%; height: 100.0%;"><b>Nadhiya</b><br>Age: 27<br>Diagnosis: COPD</div>`)[0];
+                popup_db79a8e82899a5c056e0974b117471f7.setContent(html_809f988da3e833117c331d3ba7cbe2d2);
+            
+        
+
+        marker_0ad239b23394ac2049371dcf76882a9f.bindPopup(popup_db79a8e82899a5c056e0974b117471f7)
+        ;
+
+        
+    
+    
+            var marker_efd0d9a26086bab101c9a22aad4ad69a = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_d22f9645965e5a0a44c2b061fbe13f69 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92b497ae455edc4d0c5ea84a5bbc656f = $(`<div id="html_92b497ae455edc4d0c5ea84a5bbc656f" style="width: 100.0%; height: 100.0%;"><b>Nazeera Begum</b><br>Age: 55<br>Diagnosis: COPD</div>`)[0];
+                popup_d22f9645965e5a0a44c2b061fbe13f69.setContent(html_92b497ae455edc4d0c5ea84a5bbc656f);
+            
+        
+
+        marker_efd0d9a26086bab101c9a22aad4ad69a.bindPopup(popup_d22f9645965e5a0a44c2b061fbe13f69)
+        ;
+
+        
+    
+    
+            var marker_88c0ac89b17d23d7e8f49bf2fc93c4aa = L.marker(
+                [13.6092662, 79.5185398],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_a3d706b0783a5c6fd5fd8b140f7d9521 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6719b786c444c5f3334385e3ef475da2 = $(`<div id="html_6719b786c444c5f3334385e3ef475da2" style="width: 100.0%; height: 100.0%;"><b>Govindhamma</b><br>Age: 90<br>Diagnosis: COPD</div>`)[0];
+                popup_a3d706b0783a5c6fd5fd8b140f7d9521.setContent(html_6719b786c444c5f3334385e3ef475da2);
+            
+        
+
+        marker_88c0ac89b17d23d7e8f49bf2fc93c4aa.bindPopup(popup_a3d706b0783a5c6fd5fd8b140f7d9521)
+        ;
+
+        
+    
+    
+            var marker_fcfe7e26ce0018bbd0a3c0d051df2373 = L.marker(
+                [13.5910397, 79.539093],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_d019c1f63b5231b7b97e72db937a74ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_103c8623886ada219738948913a1a255 = $(`<div id="html_103c8623886ada219738948913a1a255" style="width: 100.0%; height: 100.0%;"><b>K. Pouemma</b><br>Age: 75<br>Diagnosis: COPD</div>`)[0];
+                popup_d019c1f63b5231b7b97e72db937a74ba.setContent(html_103c8623886ada219738948913a1a255);
+            
+        
+
+        marker_fcfe7e26ce0018bbd0a3c0d051df2373.bindPopup(popup_d019c1f63b5231b7b97e72db937a74ba)
+        ;
+
+        
+    
+    
+            var marker_171a70226fd99db131d3ad4d30120d82 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_48ce788514c88f478a0282f1692d19c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a79946e1edc445d367313ed39d27f172 = $(`<div id="html_a79946e1edc445d367313ed39d27f172" style="width: 100.0%; height: 100.0%;"><b>Sarouja</b><br>Age: 60<br>Diagnosis: COPD</div>`)[0];
+                popup_48ce788514c88f478a0282f1692d19c3.setContent(html_a79946e1edc445d367313ed39d27f172);
+            
+        
+
+        marker_171a70226fd99db131d3ad4d30120d82.bindPopup(popup_48ce788514c88f478a0282f1692d19c3)
+        ;
+
+        
+    
+    
+            var marker_3b30a0712d30a56fac80e051f1a77bba = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_272297e2bd565cb4ad64aa423f3a3e6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ffc135fbefbcc600a7d34e99f0dd072f = $(`<div id="html_ffc135fbefbcc600a7d34e99f0dd072f" style="width: 100.0%; height: 100.0%;"><b>Dasthantma</b><br>Age: 80<br>Diagnosis: COPD</div>`)[0];
+                popup_272297e2bd565cb4ad64aa423f3a3e6b.setContent(html_ffc135fbefbcc600a7d34e99f0dd072f);
+            
+        
+
+        marker_3b30a0712d30a56fac80e051f1a77bba.bindPopup(popup_272297e2bd565cb4ad64aa423f3a3e6b)
+        ;
+
+        
+    
+    
+            var marker_31c15884403d3e2687956cf34ad8f1e7 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_8e9e3ff070c0c0f7e88cc3d4e485a0c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0cc814f15516147e54596fcf1eead082 = $(`<div id="html_0cc814f15516147e54596fcf1eead082" style="width: 100.0%; height: 100.0%;"><b>Chegama</b><br>Age: 87<br>Diagnosis: COPD</div>`)[0];
+                popup_8e9e3ff070c0c0f7e88cc3d4e485a0c7.setContent(html_0cc814f15516147e54596fcf1eead082);
+            
+        
+
+        marker_31c15884403d3e2687956cf34ad8f1e7.bindPopup(popup_8e9e3ff070c0c0f7e88cc3d4e485a0c7)
+        ;
+
+        
+    
+    
+            var marker_fc9f1879e2ef6e96e786e77f3198d1e7 = L.marker(
+                [13.327852, 79.1818043],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_f38527da1dcbf90e4325b5dd21fa5936 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10681d430a4898dc00cd516c64c2fc96 = $(`<div id="html_10681d430a4898dc00cd516c64c2fc96" style="width: 100.0%; height: 100.0%;"><b>Savithramma</b><br>Age: 90<br>Diagnosis: COPD</div>`)[0];
+                popup_f38527da1dcbf90e4325b5dd21fa5936.setContent(html_10681d430a4898dc00cd516c64c2fc96);
+            
+        
+
+        marker_fc9f1879e2ef6e96e786e77f3198d1e7.bindPopup(popup_f38527da1dcbf90e4325b5dd21fa5936)
+        ;
+
+        
+    
+    
+            var marker_8bd604eabc64cd92beff81bd7efc28da = L.marker(
+                [13.33398, 79.3861599],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_7b55c8dfa893dcdb696bab38030237cd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c93ce80f590872e90dd2599db45c4ce = $(`<div id="html_5c93ce80f590872e90dd2599db45c4ce" style="width: 100.0%; height: 100.0%;"><b>Rameeja</b><br>Age: 58<br>Diagnosis: COPD</div>`)[0];
+                popup_7b55c8dfa893dcdb696bab38030237cd.setContent(html_5c93ce80f590872e90dd2599db45c4ce);
+            
+        
+
+        marker_8bd604eabc64cd92beff81bd7efc28da.bindPopup(popup_7b55c8dfa893dcdb696bab38030237cd)
+        ;
+
+        
+    
+    
+            var marker_82d66a76d3e0d0188c549493843d4fc0 = L.marker(
+                [13.325586, 79.3849194],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_660d054f7f673578da38a9f7e26e105c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e18a46e943894097b832c6fe848d054a = $(`<div id="html_e18a46e943894097b832c6fe848d054a" style="width: 100.0%; height: 100.0%;"><b>Haseena Bhame</b><br>Age: 65<br>Diagnosis: COPD</div>`)[0];
+                popup_660d054f7f673578da38a9f7e26e105c.setContent(html_e18a46e943894097b832c6fe848d054a);
+            
+        
+
+        marker_82d66a76d3e0d0188c549493843d4fc0.bindPopup(popup_660d054f7f673578da38a9f7e26e105c)
+        ;
+
+        
+    
+    
+            var marker_2885ab42b65cbd5cf60527fe0d1ac752 = L.marker(
+                [13.3230469, 79.400753],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_2065608ae11c00fe37f2e3fce93919ed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_886abf19c3976c05b436a07612ce2b10 = $(`<div id="html_886abf19c3976c05b436a07612ce2b10" style="width: 100.0%; height: 100.0%;"><b>Savaswathi</b><br>Age: 82<br>Diagnosis: COPD</div>`)[0];
+                popup_2065608ae11c00fe37f2e3fce93919ed.setContent(html_886abf19c3976c05b436a07612ce2b10);
+            
+        
+
+        marker_2885ab42b65cbd5cf60527fe0d1ac752.bindPopup(popup_2065608ae11c00fe37f2e3fce93919ed)
+        ;
+
+        
+    
+    
+            var marker_ca52bf7cbdd7e23a6cd4ce30a3a26843 = L.marker(
+                [13.3200379, 79.3884382],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_42b38d475947ece9dc2efcc85d9274ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e176c7e3ff7894672a7fdf1cf4c113d = $(`<div id="html_6e176c7e3ff7894672a7fdf1cf4c113d" style="width: 100.0%; height: 100.0%;"><b>Jayamma</b><br>Age: 65<br>Diagnosis: COPD</div>`)[0];
+                popup_42b38d475947ece9dc2efcc85d9274ee.setContent(html_6e176c7e3ff7894672a7fdf1cf4c113d);
+            
+        
+
+        marker_ca52bf7cbdd7e23a6cd4ce30a3a26843.bindPopup(popup_42b38d475947ece9dc2efcc85d9274ee)
+        ;
+
+        
+    
+    
+            var marker_22e3d73e85b7ad5796862c982cc0aed2 = L.marker(
+                [13.2551345, 79.058856],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_782c045640fe953a52483e1e0a2ac48f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5987428d1c7311d92a8e38650d08e823 = $(`<div id="html_5987428d1c7311d92a8e38650d08e823" style="width: 100.0%; height: 100.0%;"><b>C. Krishna veni</b><br>Age: 34<br>Diagnosis: COPD</div>`)[0];
+                popup_782c045640fe953a52483e1e0a2ac48f.setContent(html_5987428d1c7311d92a8e38650d08e823);
+            
+        
+
+        marker_22e3d73e85b7ad5796862c982cc0aed2.bindPopup(popup_782c045640fe953a52483e1e0a2ac48f)
+        ;
+
+        
+    
+    
+            var marker_5c02bbab87d34332f044d01eb4934a76 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_4025def424f49f43c64908f7011ca0f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62d7806f3fe6320fb2924c1fc2e51600 = $(`<div id="html_62d7806f3fe6320fb2924c1fc2e51600" style="width: 100.0%; height: 100.0%;"><b>Padharawathi</b><br>Age: 60<br>Diagnosis: COPD</div>`)[0];
+                popup_4025def424f49f43c64908f7011ca0f8.setContent(html_62d7806f3fe6320fb2924c1fc2e51600);
+            
+        
+
+        marker_5c02bbab87d34332f044d01eb4934a76.bindPopup(popup_4025def424f49f43c64908f7011ca0f8)
+        ;
+
+        
+    
+    
+            var marker_a6633428c8331598810ac7c87c1c396b = L.marker(
+                [13.1976821, 79.09373939999999],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_0948b3a901d74a7721075492862de62b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93f66ef3cb0eb758cf91625c94f6afb0 = $(`<div id="html_93f66ef3cb0eb758cf91625c94f6afb0" style="width: 100.0%; height: 100.0%;"><b>Rajamma</b><br>Age: 63<br>Diagnosis: COPD</div>`)[0];
+                popup_0948b3a901d74a7721075492862de62b.setContent(html_93f66ef3cb0eb758cf91625c94f6afb0);
+            
+        
+
+        marker_a6633428c8331598810ac7c87c1c396b.bindPopup(popup_0948b3a901d74a7721075492862de62b)
+        ;
+
+        
+    
+    
+            var marker_0895185cf0ebd97ed61f82ce5ee075b2 = L.marker(
+                [13.6250605, 78.9231667],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_015a455569cef7d85635ab4d4e365f4a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8cac2499bfd642571c90ec621227710b = $(`<div id="html_8cac2499bfd642571c90ec621227710b" style="width: 100.0%; height: 100.0%;"><b>P. Srojamma</b><br>Age: 57<br>Diagnosis: COPD</div>`)[0];
+                popup_015a455569cef7d85635ab4d4e365f4a.setContent(html_8cac2499bfd642571c90ec621227710b);
+            
+        
+
+        marker_0895185cf0ebd97ed61f82ce5ee075b2.bindPopup(popup_015a455569cef7d85635ab4d4e365f4a)
+        ;
+
+        
+    
+    
+            var marker_0df04f5585a99621d658ebeece5b2f84 = L.marker(
+                [13.2308775, 79.0899245],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_52c0155217c0fd166dceec4aa5fc8010 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_735a7dae6f1c707c845ae1052b690ab3 = $(`<div id="html_735a7dae6f1c707c845ae1052b690ab3" style="width: 100.0%; height: 100.0%;"><b>Chinnepepa</b><br>Age: 64<br>Diagnosis: COPD</div>`)[0];
+                popup_52c0155217c0fd166dceec4aa5fc8010.setContent(html_735a7dae6f1c707c845ae1052b690ab3);
+            
+        
+
+        marker_0df04f5585a99621d658ebeece5b2f84.bindPopup(popup_52c0155217c0fd166dceec4aa5fc8010)
+        ;
+
+        
+    
+    
+            var marker_d69de82e89a381b420a7d4f291bf9326 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_670e1151cfb88f61fa9737b5c9270957 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dc160a3ab0ca5ac089619304e4844518 = $(`<div id="html_dc160a3ab0ca5ac089619304e4844518" style="width: 100.0%; height: 100.0%;"><b>P. Nagalakshmi</b><br>Age: 64<br>Diagnosis: COPD</div>`)[0];
+                popup_670e1151cfb88f61fa9737b5c9270957.setContent(html_dc160a3ab0ca5ac089619304e4844518);
+            
+        
+
+        marker_d69de82e89a381b420a7d4f291bf9326.bindPopup(popup_670e1151cfb88f61fa9737b5c9270957)
+        ;
+
+        
+    
+    
+            var marker_0c416b489f50614fd1a4629c7811bd8c = L.marker(
+                [13.1907618, 79.149209],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_66210dc36da6561d8857c8a7ff6a5953 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc540da18623a9f6617dc679f23b8912 = $(`<div id="html_fc540da18623a9f6617dc679f23b8912" style="width: 100.0%; height: 100.0%;"><b>M. Kakshmamma</b><br>Age: 62<br>Diagnosis: COPD</div>`)[0];
+                popup_66210dc36da6561d8857c8a7ff6a5953.setContent(html_fc540da18623a9f6617dc679f23b8912);
+            
+        
+
+        marker_0c416b489f50614fd1a4629c7811bd8c.bindPopup(popup_66210dc36da6561d8857c8a7ff6a5953)
+        ;
+
+        
+    
+    
+            var marker_f63ad25ffc69a2da08673b2020f25b04 = L.marker(
+                [13.2129399, 79.1026315],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_32174bdbcf1671e7822f9546955fb02f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_411a282b40fbab8096a828145a60c7ec = $(`<div id="html_411a282b40fbab8096a828145a60c7ec" style="width: 100.0%; height: 100.0%;"><b>P. Nagalakshmi</b><br>Age: 64<br>Diagnosis: COPD</div>`)[0];
+                popup_32174bdbcf1671e7822f9546955fb02f.setContent(html_411a282b40fbab8096a828145a60c7ec);
+            
+        
+
+        marker_f63ad25ffc69a2da08673b2020f25b04.bindPopup(popup_32174bdbcf1671e7822f9546955fb02f)
+        ;
+
+        
+    
+    
+            var marker_4d94a9616119bec74a089f7b37913aed = L.marker(
+                [13.2458755, 79.1495618],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_0114d4a3a63840477a2d902e39c87fcd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0aa932ec83b3d761bb37f5e5c95d0c03 = $(`<div id="html_0aa932ec83b3d761bb37f5e5c95d0c03" style="width: 100.0%; height: 100.0%;"><b>Jayamma</b><br>Age: 80<br>Diagnosis: COPD</div>`)[0];
+                popup_0114d4a3a63840477a2d902e39c87fcd.setContent(html_0aa932ec83b3d761bb37f5e5c95d0c03);
+            
+        
+
+        marker_4d94a9616119bec74a089f7b37913aed.bindPopup(popup_0114d4a3a63840477a2d902e39c87fcd)
+        ;
+
+        
+    
+    
+            var marker_5076325fea036a9955a4c30e2d1fae00 = L.marker(
+                [13.2417669, 79.0786281],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_8d4f29f7fadcb796221660b201f0648a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e4f9f00a4751217c69ca91d2be794f2f = $(`<div id="html_e4f9f00a4751217c69ca91d2be794f2f" style="width: 100.0%; height: 100.0%;"><b>M. Marayadhavalli</b><br>Age: 50<br>Diagnosis: COPD</div>`)[0];
+                popup_8d4f29f7fadcb796221660b201f0648a.setContent(html_e4f9f00a4751217c69ca91d2be794f2f);
+            
+        
+
+        marker_5076325fea036a9955a4c30e2d1fae00.bindPopup(popup_8d4f29f7fadcb796221660b201f0648a)
+        ;
+
+        
+    
+    
+            var marker_c283e5bdf922321e390c29fe914de5f6 = L.marker(
+                [13.2200628, 79.0863945],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_805285328b83391bb5582fb216666985 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_911fbe120e893550b5c431b56a79b720 = $(`<div id="html_911fbe120e893550b5c431b56a79b720" style="width: 100.0%; height: 100.0%;"><b>Bhuvaneswari</b><br>Age: 50<br>Diagnosis: COPD</div>`)[0];
+                popup_805285328b83391bb5582fb216666985.setContent(html_911fbe120e893550b5c431b56a79b720);
+            
+        
+
+        marker_c283e5bdf922321e390c29fe914de5f6.bindPopup(popup_805285328b83391bb5582fb216666985)
+        ;
+
+        
+    
+    
+            var marker_f518be541e07c65b1c1710a6e01efb49 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_ff2e5cd78a7da452331c91b1199a30d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6deed20cec36e4e2b0c4a6fe607e3b3b = $(`<div id="html_6deed20cec36e4e2b0c4a6fe607e3b3b" style="width: 100.0%; height: 100.0%;"><b>M Dinnaka</b><br>Age: 50<br>Diagnosis: COPD</div>`)[0];
+                popup_ff2e5cd78a7da452331c91b1199a30d1.setContent(html_6deed20cec36e4e2b0c4a6fe607e3b3b);
+            
+        
+
+        marker_f518be541e07c65b1c1710a6e01efb49.bindPopup(popup_ff2e5cd78a7da452331c91b1199a30d1)
+        ;
+
+        
+    
+    
+            var marker_d1852b58e6d0810290f76db041742845 = L.marker(
+                [13.1434968, 79.0906305],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_41f162beee39970af1211092fbaa7aae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ff645c163046687a4f31a12aadf6e70 = $(`<div id="html_7ff645c163046687a4f31a12aadf6e70" style="width: 100.0%; height: 100.0%;"><b>Monikyamma</b><br>Age: 95<br>Diagnosis: COPD</div>`)[0];
+                popup_41f162beee39970af1211092fbaa7aae.setContent(html_7ff645c163046687a4f31a12aadf6e70);
+            
+        
+
+        marker_d1852b58e6d0810290f76db041742845.bindPopup(popup_41f162beee39970af1211092fbaa7aae)
+        ;
+
+        
+    
+    
+            var marker_249f2ace1084dea373b6bc069e741faf = L.marker(
+                [13.1752414, 79.1019256],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_ac34c9f39bff51dfcbc0426f45428821 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f721df23efafcc83ee7220e12926924 = $(`<div id="html_9f721df23efafcc83ee7220e12926924" style="width: 100.0%; height: 100.0%;"><b>M. Gopamma</b><br>Age: 90<br>Diagnosis: COPD</div>`)[0];
+                popup_ac34c9f39bff51dfcbc0426f45428821.setContent(html_9f721df23efafcc83ee7220e12926924);
+            
+        
+
+        marker_249f2ace1084dea373b6bc069e741faf.bindPopup(popup_ac34c9f39bff51dfcbc0426f45428821)
+        ;
+
+        
+    
+    
+            var marker_ebaf4218aa95f1818fbeafbada4bac48 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_2605cbf6e9ccf291525e6d5e03d259de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8cfb61f99bc914c818ab0e387de411c7 = $(`<div id="html_8cfb61f99bc914c818ab0e387de411c7" style="width: 100.0%; height: 100.0%;"><b>Valliyamma</b><br>Age: 60<br>Diagnosis: COPD</div>`)[0];
+                popup_2605cbf6e9ccf291525e6d5e03d259de.setContent(html_8cfb61f99bc914c818ab0e387de411c7);
+            
+        
+
+        marker_ebaf4218aa95f1818fbeafbada4bac48.bindPopup(popup_2605cbf6e9ccf291525e6d5e03d259de)
+        ;
+
+        
+    
+    
+            var marker_fc6b5e27f9c95908fb330ddda95413e7 = L.marker(
+                [13.152245, 79.11251349999999],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_8faab3a8915c3f7c551e6582da89e6b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d34ce06db7e370f2b830e84684d60aa7 = $(`<div id="html_d34ce06db7e370f2b830e84684d60aa7" style="width: 100.0%; height: 100.0%;"><b>Dhauua Sree</b><br>Age: 28<br>Diagnosis: COPD</div>`)[0];
+                popup_8faab3a8915c3f7c551e6582da89e6b5.setContent(html_d34ce06db7e370f2b830e84684d60aa7);
+            
+        
+
+        marker_fc6b5e27f9c95908fb330ddda95413e7.bindPopup(popup_8faab3a8915c3f7c551e6582da89e6b5)
+        ;
+
+        
+    
+    
+            var marker_394782d2c6356b7bd79a53eab6034e5c = L.marker(
+                [12.9649233, 78.8591787],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_16ec2eb03c153ffeaaae289ba49b8f78 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_756c0dfe6241f7b17e68bd84a3214af1 = $(`<div id="html_756c0dfe6241f7b17e68bd84a3214af1" style="width: 100.0%; height: 100.0%;"><b>Jubeda. Sp.</b><br>Age: 60<br>Diagnosis: COPD</div>`)[0];
+                popup_16ec2eb03c153ffeaaae289ba49b8f78.setContent(html_756c0dfe6241f7b17e68bd84a3214af1);
+            
+        
+
+        marker_394782d2c6356b7bd79a53eab6034e5c.bindPopup(popup_16ec2eb03c153ffeaaae289ba49b8f78)
+        ;
+
+        
+    
+    
+            var marker_7413babf523e06cff3e34549ec2bd96f = L.marker(
+                [13.1645757, 79.135097],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_e5ef0875e8e27c474ca04f684d865bb7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29e1aa21e0773b41fe47551967bed928 = $(`<div id="html_29e1aa21e0773b41fe47551967bed928" style="width: 100.0%; height: 100.0%;"><b>Jaya Lakshmi</b><br>Age: 65<br>Diagnosis: COPD</div>`)[0];
+                popup_e5ef0875e8e27c474ca04f684d865bb7.setContent(html_29e1aa21e0773b41fe47551967bed928);
+            
+        
+
+        marker_7413babf523e06cff3e34549ec2bd96f.bindPopup(popup_e5ef0875e8e27c474ca04f684d865bb7)
+        ;
+
+        
+    
+    
+            var marker_e362a160b80cc041a3a196b2075aa14f = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_62f68b9fd35c4117a7ef9a98b611bb99 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8521b74dac46b346b0426735940d413a = $(`<div id="html_8521b74dac46b346b0426735940d413a" style="width: 100.0%; height: 100.0%;"><b>P. Sampoornamma</b><br>Age: 70<br>Diagnosis: COPD</div>`)[0];
+                popup_62f68b9fd35c4117a7ef9a98b611bb99.setContent(html_8521b74dac46b346b0426735940d413a);
+            
+        
+
+        marker_e362a160b80cc041a3a196b2075aa14f.bindPopup(popup_62f68b9fd35c4117a7ef9a98b611bb99)
+        ;
+
+        
+    
+    
+            var marker_ddee2cf664958c6e5aece8aa19c75b01 = L.marker(
+                [13.1568962, 79.09663119999999],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_26c99fd4caa2016294c65f95ae8c9488 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_48b3271beb8379bfb9f8b4fac6b81518 = $(`<div id="html_48b3271beb8379bfb9f8b4fac6b81518" style="width: 100.0%; height: 100.0%;"><b>Sauthamma</b><br>Age: 67<br>Diagnosis: COPD</div>`)[0];
+                popup_26c99fd4caa2016294c65f95ae8c9488.setContent(html_48b3271beb8379bfb9f8b4fac6b81518);
+            
+        
+
+        marker_ddee2cf664958c6e5aece8aa19c75b01.bindPopup(popup_26c99fd4caa2016294c65f95ae8c9488)
+        ;
+
+        
+    
+    
+            var marker_f5b9239ad045f28d5fa1e27015593156 = L.marker(
+                [13.1465794, 79.0962782],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_076aacffd5901e5308ef85acef9da214 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31b7e1303c908e9850a6e5884caef6a0 = $(`<div id="html_31b7e1303c908e9850a6e5884caef6a0" style="width: 100.0%; height: 100.0%;"><b>C. Lakshmi</b><br>Age: 39<br>Diagnosis: COPD</div>`)[0];
+                popup_076aacffd5901e5308ef85acef9da214.setContent(html_31b7e1303c908e9850a6e5884caef6a0);
+            
+        
+
+        marker_f5b9239ad045f28d5fa1e27015593156.bindPopup(popup_076aacffd5901e5308ef85acef9da214)
+        ;
+
+        
+    
+    
+            var marker_b2e1d35348ae61721c249d592ef27347 = L.marker(
+                [13.3188246, 79.2169174],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_0d12b80cc9ca993b773097eb919588e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3615be40ccc87942bac3ff0baf56f389 = $(`<div id="html_3615be40ccc87942bac3ff0baf56f389" style="width: 100.0%; height: 100.0%;"><b>Lakshmi</b><br>Age: 85<br>Diagnosis: COPD</div>`)[0];
+                popup_0d12b80cc9ca993b773097eb919588e2.setContent(html_3615be40ccc87942bac3ff0baf56f389);
+            
+        
+
+        marker_b2e1d35348ae61721c249d592ef27347.bindPopup(popup_0d12b80cc9ca993b773097eb919588e2)
+        ;
+
+        
+    
+    
+            var marker_6074708b94466bc2f6535c33a2619d07 = L.marker(
+                [13.2772115, 79.24229559999999],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_6237c14de88ec855be09a4f0a3330e89 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd4256425877cd521dd14c40de8e4790 = $(`<div id="html_cd4256425877cd521dd14c40de8e4790" style="width: 100.0%; height: 100.0%;"><b>Vanamma</b><br>Age: 65<br>Diagnosis: COPD</div>`)[0];
+                popup_6237c14de88ec855be09a4f0a3330e89.setContent(html_cd4256425877cd521dd14c40de8e4790);
+            
+        
+
+        marker_6074708b94466bc2f6535c33a2619d07.bindPopup(popup_6237c14de88ec855be09a4f0a3330e89)
+        ;
+
+        
+    
+    
+            var marker_65790aecca687408e48f4b09c5a6c5c8 = L.marker(
+                [13.1983684, 79.3095058],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_b517332488d213e0874bf50a995f2fb2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07158ef63bfe1ab6bdaf9610e0517432 = $(`<div id="html_07158ef63bfe1ab6bdaf9610e0517432" style="width: 100.0%; height: 100.0%;"><b>Neelamma</b><br>Age: 60<br>Diagnosis: COPD</div>`)[0];
+                popup_b517332488d213e0874bf50a995f2fb2.setContent(html_07158ef63bfe1ab6bdaf9610e0517432);
+            
+        
+
+        marker_65790aecca687408e48f4b09c5a6c5c8.bindPopup(popup_b517332488d213e0874bf50a995f2fb2)
+        ;
+
+        
+    
+    
+            var marker_53e754db9a18a2636cd12085f3cdc9b5 = L.marker(
+                [13.1973637, 79.2630864],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_3148f962f9c5c0d6837c202176ebfee6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1611f6603dd77bedb009ec944b990075 = $(`<div id="html_1611f6603dd77bedb009ec944b990075" style="width: 100.0%; height: 100.0%;"><b>Radhamma</b><br>Age: 60<br>Diagnosis: COPD</div>`)[0];
+                popup_3148f962f9c5c0d6837c202176ebfee6.setContent(html_1611f6603dd77bedb009ec944b990075);
+            
+        
+
+        marker_53e754db9a18a2636cd12085f3cdc9b5.bindPopup(popup_3148f962f9c5c0d6837c202176ebfee6)
+        ;
+
+        
+    
+    
+            var marker_e27aae2b6b902bc08e0030b53af8b4b3 = L.marker(
+                [13.1180667, 78.8467579],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_8eff5db8b828ade313a96dda655bf9de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_643ad5f72ef7a8c32a9646f8127f6d1c = $(`<div id="html_643ad5f72ef7a8c32a9646f8127f6d1c" style="width: 100.0%; height: 100.0%;"><b>R. Lakshmi</b><br>Age: 64<br>Diagnosis: COPD</div>`)[0];
+                popup_8eff5db8b828ade313a96dda655bf9de.setContent(html_643ad5f72ef7a8c32a9646f8127f6d1c);
+            
+        
+
+        marker_e27aae2b6b902bc08e0030b53af8b4b3.bindPopup(popup_8eff5db8b828ade313a96dda655bf9de)
+        ;
+
+        
+    
+    
+            var marker_46beb0c6d913711da998df0c8cc9aa7a = L.marker(
+                [13.5420479, 79.4394459],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_ac90ae8e2fa4f346d0f817494922f73c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14b7f9fe6ab955d19565720eb69853e9 = $(`<div id="html_14b7f9fe6ab955d19565720eb69853e9" style="width: 100.0%; height: 100.0%;"><b>Ademma</b><br>Age: 50<br>Diagnosis: COPD</div>`)[0];
+                popup_ac90ae8e2fa4f346d0f817494922f73c.setContent(html_14b7f9fe6ab955d19565720eb69853e9);
+            
+        
+
+        marker_46beb0c6d913711da998df0c8cc9aa7a.bindPopup(popup_ac90ae8e2fa4f346d0f817494922f73c)
+        ;
+
+        
+    
+    
+            var marker_d708f9db534b15707246122bc55b58a2 = L.marker(
+                [13.0249688, 78.8656698],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_ec8e009ffc7edc488102d52a60723f8d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_357b0b291fdd29133adb1d95c464acd1 = $(`<div id="html_357b0b291fdd29133adb1d95c464acd1" style="width: 100.0%; height: 100.0%;"><b>Mogilamma</b><br>Age: 70<br>Diagnosis: COPD</div>`)[0];
+                popup_ec8e009ffc7edc488102d52a60723f8d.setContent(html_357b0b291fdd29133adb1d95c464acd1);
+            
+        
+
+        marker_d708f9db534b15707246122bc55b58a2.bindPopup(popup_ec8e009ffc7edc488102d52a60723f8d)
+        ;
+
+        
+    
+    
+            var marker_c33f41dcd0db7a35c9e9de86e4976c0b = L.marker(
+                [13.0713263, 79.01364749999999],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_c6f64392a9fefa7c117cab3eb0076ade = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0cf09ae7a53b781e950f944887efc694 = $(`<div id="html_0cf09ae7a53b781e950f944887efc694" style="width: 100.0%; height: 100.0%;"><b>Saradhamma</b><br>Age: 75<br>Diagnosis: COPD</div>`)[0];
+                popup_c6f64392a9fefa7c117cab3eb0076ade.setContent(html_0cf09ae7a53b781e950f944887efc694);
+            
+        
+
+        marker_c33f41dcd0db7a35c9e9de86e4976c0b.bindPopup(popup_c6f64392a9fefa7c117cab3eb0076ade)
+        ;
+
+        
+    
+    
+            var marker_fd864dd20c5dea69fa281ea394c3baab = L.marker(
+                [13.029749, 78.9375227],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_2f25457c231dfdd8bebe269ef7c809d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83b26531c18a7cdb8c9a196f8899d2ef = $(`<div id="html_83b26531c18a7cdb8c9a196f8899d2ef" style="width: 100.0%; height: 100.0%;"><b>Bhagyamma</b><br>Age: 50<br>Diagnosis: COPD</div>`)[0];
+                popup_2f25457c231dfdd8bebe269ef7c809d7.setContent(html_83b26531c18a7cdb8c9a196f8899d2ef);
+            
+        
+
+        marker_fd864dd20c5dea69fa281ea394c3baab.bindPopup(popup_2f25457c231dfdd8bebe269ef7c809d7)
+        ;
+
+        
+    
+    
+            var marker_1c67b5031e0211fa4596e117017fb4cd = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_fb183c609a31009fa029ead0e5387b23 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3bdc3baceeed1661b71c03f4fe9ae7cd = $(`<div id="html_3bdc3baceeed1661b71c03f4fe9ae7cd" style="width: 100.0%; height: 100.0%;"><b>Sunitha</b><br>Age: 40<br>Diagnosis: COPD</div>`)[0];
+                popup_fb183c609a31009fa029ead0e5387b23.setContent(html_3bdc3baceeed1661b71c03f4fe9ae7cd);
+            
+        
+
+        marker_1c67b5031e0211fa4596e117017fb4cd.bindPopup(popup_fb183c609a31009fa029ead0e5387b23)
+        ;
+
+        
+    
+    
+            var marker_8fb2efc22d73fa34b4f6ec6d1ed17ea5 = L.marker(
+                [13.3075909, 78.8920444],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_2e27716128366744bf11660e40e56dfc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_28e2e8568375b284eb9a630945f10865 = $(`<div id="html_28e2e8568375b284eb9a630945f10865" style="width: 100.0%; height: 100.0%;"><b>Reelamel</b><br>Age: 62<br>Diagnosis: COPD</div>`)[0];
+                popup_2e27716128366744bf11660e40e56dfc.setContent(html_28e2e8568375b284eb9a630945f10865);
+            
+        
+
+        marker_8fb2efc22d73fa34b4f6ec6d1ed17ea5.bindPopup(popup_2e27716128366744bf11660e40e56dfc)
+        ;
+
+        
+    
+    
+            var marker_013bfec32e328e6f482cce5faaf10eda = L.marker(
+                [13.0964771, 78.9793737],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_d1346525e15b65c7112b89a4a3ff87ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4996928e0000f003eaf6b7c3f4059fe7 = $(`<div id="html_4996928e0000f003eaf6b7c3f4059fe7" style="width: 100.0%; height: 100.0%;"><b>Meenakshi</b><br>Age: 37<br>Diagnosis: COPD</div>`)[0];
+                popup_d1346525e15b65c7112b89a4a3ff87ea.setContent(html_4996928e0000f003eaf6b7c3f4059fe7);
+            
+        
+
+        marker_013bfec32e328e6f482cce5faaf10eda.bindPopup(popup_d1346525e15b65c7112b89a4a3ff87ea)
+        ;
+
+        
+    
+    
+            var marker_23e9a0a3225322c2e965541d32390e6e = L.marker(
+                [13.3061136, 78.9231667],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_f519348f2283af8e22ea8ac04498cf6c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_979f02b86fbfc26263b4521ac3536fe3 = $(`<div id="html_979f02b86fbfc26263b4521ac3536fe3" style="width: 100.0%; height: 100.0%;"><b>Lakshmi Devamma</b><br>Age: 61<br>Diagnosis: COPD</div>`)[0];
+                popup_f519348f2283af8e22ea8ac04498cf6c.setContent(html_979f02b86fbfc26263b4521ac3536fe3);
+            
+        
+
+        marker_23e9a0a3225322c2e965541d32390e6e.bindPopup(popup_f519348f2283af8e22ea8ac04498cf6c)
+        ;
+
+        
+    
+    
+            var marker_d81136795d16b51e2954925f919513a5 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_9b38ae21e30674f82ac24625df28a9e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6122b81bc48183d8714136f8ba24b51e = $(`<div id="html_6122b81bc48183d8714136f8ba24b51e" style="width: 100.0%; height: 100.0%;"><b>C. Muueimma</b><br>Age: 67<br>Diagnosis: COPD</div>`)[0];
+                popup_9b38ae21e30674f82ac24625df28a9e2.setContent(html_6122b81bc48183d8714136f8ba24b51e);
+            
+        
+
+        marker_d81136795d16b51e2954925f919513a5.bindPopup(popup_9b38ae21e30674f82ac24625df28a9e2)
+        ;
+
+        
+    
+    
+            var marker_e2c3d6a3b2d9005ebff788efbabd5620 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_7e01f26f792f50803f9a09c4ca9a9a3a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b8501c3530c81c485e907857b7f40d4 = $(`<div id="html_9b8501c3530c81c485e907857b7f40d4" style="width: 100.0%; height: 100.0%;"><b>Indrani</b><br>Age: 25<br>Diagnosis: COPD</div>`)[0];
+                popup_7e01f26f792f50803f9a09c4ca9a9a3a.setContent(html_9b8501c3530c81c485e907857b7f40d4);
+            
+        
+
+        marker_e2c3d6a3b2d9005ebff788efbabd5620.bindPopup(popup_7e01f26f792f50803f9a09c4ca9a9a3a)
+        ;
+
+        
+    
+    
+            var marker_6ef8b0a1b8c352559917cc118e1ce7fa = L.marker(
+                [13.0660978, 79.0825114],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_d3239b898284776c0abbac5025d6f57b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff93cb87498e47bb1e37e5c95145ef18 = $(`<div id="html_ff93cb87498e47bb1e37e5c95145ef18" style="width: 100.0%; height: 100.0%;"><b>Chilakamma</b><br>Age: 45<br>Diagnosis: COPD</div>`)[0];
+                popup_d3239b898284776c0abbac5025d6f57b.setContent(html_ff93cb87498e47bb1e37e5c95145ef18);
+            
+        
+
+        marker_6ef8b0a1b8c352559917cc118e1ce7fa.bindPopup(popup_d3239b898284776c0abbac5025d6f57b)
+        ;
+
+        
+    
+    
+            var marker_b0e9d3c477bfdbda10418e4bf5e9804c = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_2a60fc694d715a4b1c2ed1de204d06ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2e6097f8924295bd51c29e08a036a84 = $(`<div id="html_b2e6097f8924295bd51c29e08a036a84" style="width: 100.0%; height: 100.0%;"><b>P. Menna</b><br>Age: 45<br>Diagnosis: COPD</div>`)[0];
+                popup_2a60fc694d715a4b1c2ed1de204d06ee.setContent(html_b2e6097f8924295bd51c29e08a036a84);
+            
+        
+
+        marker_b0e9d3c477bfdbda10418e4bf5e9804c.bindPopup(popup_2a60fc694d715a4b1c2ed1de204d06ee)
+        ;
+
+        
+    
+    
+            var marker_b51acaeb921ae78d76ddc19b0dfbf43c = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_07c4aece3e21825fec812d52e10d0571 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1726e48afe189b9a806b56389c1742e = $(`<div id="html_f1726e48afe189b9a806b56389c1742e" style="width: 100.0%; height: 100.0%;"><b>Swapna</b><br>Age: 30<br>Diagnosis: COPD</div>`)[0];
+                popup_07c4aece3e21825fec812d52e10d0571.setContent(html_f1726e48afe189b9a806b56389c1742e);
+            
+        
+
+        marker_b51acaeb921ae78d76ddc19b0dfbf43c.bindPopup(popup_07c4aece3e21825fec812d52e10d0571)
+        ;
+
+        
+    
+    
+            var marker_c16787cf30fcd199f74a166c1850b571 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_f8bc6ce4af3546a480f9234d0738d6ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e152b6a93b27725d17d4b5223435d472 = $(`<div id="html_e152b6a93b27725d17d4b5223435d472" style="width: 100.0%; height: 100.0%;"><b>Lakshmamma</b><br>Age: 55<br>Diagnosis: COPD</div>`)[0];
+                popup_f8bc6ce4af3546a480f9234d0738d6ee.setContent(html_e152b6a93b27725d17d4b5223435d472);
+            
+        
+
+        marker_c16787cf30fcd199f74a166c1850b571.bindPopup(popup_f8bc6ce4af3546a480f9234d0738d6ee)
+        ;
+
+        
+    
+    
+            var marker_c7806a9537d254e0d3b526097607f0cf = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_f68763ae0cee93950e810086630e0af8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a5e9c14f847dff8e958d3911fe4349c = $(`<div id="html_3a5e9c14f847dff8e958d3911fe4349c" style="width: 100.0%; height: 100.0%;"><b>Malathi</b><br>Age: 55<br>Diagnosis: COPD</div>`)[0];
+                popup_f68763ae0cee93950e810086630e0af8.setContent(html_3a5e9c14f847dff8e958d3911fe4349c);
+            
+        
+
+        marker_c7806a9537d254e0d3b526097607f0cf.bindPopup(popup_f68763ae0cee93950e810086630e0af8)
+        ;
+
+        
+    
+    
+            var marker_3ddfac1eb7221dda04d44da678ee1e96 = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_175294086a5114094313e3e1cb7973b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3bde0392c84e4377f123a28449e7ce83 = $(`<div id="html_3bde0392c84e4377f123a28449e7ce83" style="width: 100.0%; height: 100.0%;"><b>Govindamma</b><br>Age: 70<br>Diagnosis: COPD</div>`)[0];
+                popup_175294086a5114094313e3e1cb7973b7.setContent(html_3bde0392c84e4377f123a28449e7ce83);
+            
+        
+
+        marker_3ddfac1eb7221dda04d44da678ee1e96.bindPopup(popup_175294086a5114094313e3e1cb7973b7)
+        ;
+
+        
+    
+    
+            var marker_b02fa2e6e1908d81820776677ba37b67 = L.marker(
+                [13.2812607, 78.9563999],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_833408a1ec2a19d18891f45ecc1a1fee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_55a7f76d354d41e2ceded43f08a65459 = $(`<div id="html_55a7f76d354d41e2ceded43f08a65459" style="width: 100.0%; height: 100.0%;"><b>Gangulamma</b><br>Age: 65<br>Diagnosis: COPD</div>`)[0];
+                popup_833408a1ec2a19d18891f45ecc1a1fee.setContent(html_55a7f76d354d41e2ceded43f08a65459);
+            
+        
+
+        marker_b02fa2e6e1908d81820776677ba37b67.bindPopup(popup_833408a1ec2a19d18891f45ecc1a1fee)
+        ;
+
+        
+    
+    
+            var marker_b4a5922109b851410a8efb7f2ab0f981 = L.marker(
+                [13.0660978, 79.0825114],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_4aec150d41e924f5193c069c556fce9a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_951ba529f93be0f7713e46984f857f62 = $(`<div id="html_951ba529f93be0f7713e46984f857f62" style="width: 100.0%; height: 100.0%;"><b>Mrs. Ram</b><br>Age: 65<br>Diagnosis: COPD</div>`)[0];
+                popup_4aec150d41e924f5193c069c556fce9a.setContent(html_951ba529f93be0f7713e46984f857f62);
+            
+        
+
+        marker_b4a5922109b851410a8efb7f2ab0f981.bindPopup(popup_4aec150d41e924f5193c069c556fce9a)
+        ;
+
+        
+    
+    
+            var marker_c4b9722d9414e686bb1243764ed2695a = L.marker(
+                [13.217176, 79.1003289],
+                {
+}
+            ).addTo(marker_cluster_2b6957e5deee5ab96a82c1202c16b503);
+        
+    
+        var popup_74e666df7c895393b2b05322b4313bee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d53387b814b12f2cc9ef6c14744bbbf5 = $(`<div id="html_d53387b814b12f2cc9ef6c14744bbbf5" style="width: 100.0%; height: 100.0%;"><b>Babiyamma</b><br>Age: 70<br>Diagnosis: COPD</div>`)[0];
+                popup_74e666df7c895393b2b05322b4313bee.setContent(html_d53387b814b12f2cc9ef6c14744bbbf5);
+            
+        
+
+        marker_c4b9722d9414e686bb1243764ed2695a.bindPopup(popup_74e666df7c895393b2b05322b4313bee)
+        ;
+
+        
+    
+    
+            marker_cluster_2b6957e5deee5ab96a82c1202c16b503.addTo(map_ebc25c815aaa3d4ea0676c39b06fa6bf);
+        
+</script>
+</html>
