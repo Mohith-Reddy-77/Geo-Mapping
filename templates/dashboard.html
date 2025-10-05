@@ -1,94 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breathing the Numbers</title>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Health Dashboard</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        /* Custom styles to integrate Inter font with Tailwind */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9; /* slate-100 */
-        }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f1f5f9;
+      }
+
+      /* Transition for sidebar */
+      .sidebar {
+        transition: all 0.3s ease;
+      }
+      /* Hide scrollbar but keep scroll functionality */
+      .sidebar {
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .sidebar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
     </style>
-</head>
-<body class="antialiased text-slate-700">
+  </head>
+  <body class="antialiased text-slate-700">
+    <!-- Sidebar Overlay -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black bg-opacity-40 hidden z-40 transition-opacity duration-300 xl:hidden"
+    ></div>
+    <!-- Sidebar Toggle Button -->
+    <button
+      id="menu-toggle"
+      class="xl:hidden fixed top-4 left-4 z-40 bg-white p-2 rounded-lg shadow-md hover:bg-slate-100 focus:outline-none"
+    >
+      <!-- Hamburger Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 text-slate-700"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+
     <div class="flex h-full">
-        <!-- Sidebar Navigation (Placeholder) -->
-        <aside class="w-64 bg-slate-900 text-white p-6 flex-shrink-0 hidden md:flex flex-col">
-            <div class="flex items-center gap-3 mb-10">
-            <!--   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                <h1 class="text-2xl font-bold tracking-tight">HealthTrack</h1>
-            </div>
-            <nav class="flex-grow">
-                <ul class="space-y-3">
-                    <li><a href="#" class="flex items-center gap-3 bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-lg font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>Dashboard</a></li>
-                    <li><a href="#" class="flex items-center gap-3 hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Patients</a></li>
-                    <li><a href="#" class="flex items-center gap-3 hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>Analytics</a></li>
-                    <li><a href="#" class="flex items-center gap-3 hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-4.44a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.88Z"/><path d="M16 2v6h6"/><path d="M10 13H8"/><path d="M16 13h-2"/><path d="M16 17h-2"/><path d="M10 17H8"/><path d="m14 15-2-2-2 2"/><path d="m10 15 2 2 2-2"/></svg>Reports</a></li>
-                </ul>
-            </nav>
-            <div class="mt-auto">
-                 <a href="#" class="flex items-center gap-3 hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 21.7a1.94 1.94 0 0 0-3.4 0"/><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="2" y2="4"/><line x1="21.17" x2="19.05" y1="4.83" y2="6.95"/><line x1="22" x2="20" y1="12" y2="12"/><line x1="21.17" x2="19.05" y1="19.17" y2="17.05"/><line x1="12" x2="12" y1="22" y2="20"/><line x1="2.83" x2="4.95" y1="19.17" y2="17.05"/><line x1="2" x2="4" y1="12" y2="12"/><line x1="2.83" x2="4.95" y1="4.83" y2="6.95"/></svg>Settings</a>
-            </div>-->
-        </aside>
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+  class="sidebar w-64 bg-white rounded-r-2xl shadow-lg h-screen fixed top-0 left-0 overflow-y-auto transform -translate-x-full xl:translate-x-0 z-50">
+  <div class="p-6 border-b border-slate-200 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-slate-800">Dashboard</h1>
+    <button id="close-sidebar" class="xl:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-600 hover:text-slate-800" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
 
-        <!-- Main Content -->
-        <main class="flex-1 p-4 sm:p-6 lg:p-8">
-            <header class="mb-8">
-                <h1 class="text-3xl font-bold text-slate-800">Epidemiological Geo-mapping</h1>
-                <p class="text-slate-500 mt-1">Analysis of Air Quality Index and COPD Burden in Chittoor-District</p>
-            </header>
+      <!-- Navigation -->
+      <nav class="p-6 space-y-6 text-slate-700">
 
-            <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
-                <!-- Map Card -->
-                <section class="bg-white p-6 rounded-2xl shadow-lg xl:col-span-2">
-                    <h2 class="text-xl font-semibold mb-4 text-slate-800">Patient Locations</h2>
-                    <div class="w-full h-96 rounded-xl overflow-hidden relative">
-                        <iframe src="{{ url_for('map_page') }}" class="absolute top-0 left-0 w-full h-full border-none"></iframe>
-                    </div>
-                </section>
-                
-                <!-- Revenue Division Card -->
-                <section class="bg-white p-6 rounded-2xl shadow-lg">
-                    <h2 class="text-xl font-semibold mb-4 text-slate-800">Distribution by Revenue Division</h2>
-                    <div class="h-96 flex items-center justify-center">
-                        <canvas id="revenueDonutChart"></canvas>
-                    </div>
-                </section>
-                
-                <!-- Age Group Card -->
-                <section class="bg-white p-6 rounded-2xl shadow-lg xl:col-span-2">
-                    <h2 class="text-xl font-semibold mb-4 text-slate-800">Patients by Age Group</h2>
-                    <div class="h-80">
-                         <canvas id="ageChart"></canvas>
-                    </div>
-                </section>
+        <!-- User Section -->
+        <div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-2 flex items-center gap-2">
+            <span class="text-purple-500">👤</span> User Section
+          </h2>
+          <ul class="ml-3 space-y-2">
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Login / Sign Up</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Profile</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Sign Out</a></li>
+          </ul>
+        </div>
 
-                <!-- AQI Range Card -->
-                <section class="bg-white p-6 rounded-2xl shadow-lg">
-                    <h2 class="text-xl font-semibold mb-4 text-slate-800">Patients by AQI Range</h2>
-                     <div class="h-80">
-                         <canvas id="aqiLineChart"></canvas>
-                    </div>
-                </section>
-            </div>
-        </main>
+        <!-- Dashboard Section -->
+        <div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-2 flex items-center gap-2">
+            <span class="text-pink-500">📊</span> Dashboard Section
+          </h2>
+          <ul class="ml-3 space-y-2">
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Home / Overview</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">My Health Data</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">AQI Dashboard</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Disease Risk Map</a></li>
+          </ul>
+        </div>
+
+        <!-- Analytics Section -->
+        <div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-2 flex items-center gap-2">
+            <span class="text-indigo-500">📈</span> Analytics Section
+          </h2>
+          <ul class="ml-3 space-y-2">
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Trends & Graphs</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Predictive Alerts</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Reports & Downloads</a></li>
+          </ul>
+        </div>
+
+        <!-- Community / Info Section -->
+        <div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-2 flex items-center gap-2">
+            <span class="text-green-500">🌍</span> Community / Info Section
+          </h2>
+          <ul class="ml-3 space-y-2">
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Prevention Tips</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Awareness Zone</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Discussion Forum / Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Settings Section -->
+        <div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-2 flex items-center gap-2">
+            <span class="text-gray-500">⚙️</span> Settings Section
+          </h2>
+          <ul class="ml-3 space-y-2">
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">App Settings</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Notification Preferences</a></li>
+            <li><a href="#" class="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-blue-600">Help & Contact Us</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 xl:ml-64 p-6 ">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold text-slate-800" style="margin-top: 40px;">Epidemiological Geo-mapping</h1>
+        <p class="text-slate-500 mt-1">Analysis of Air Quality Index and COPD Burden in Chittoor-District</p>
+      </header>
+
+      <!-- Map & Charts -->
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        <!-- Map Card -->
+        <section class="bg-white p-6 rounded-2xl shadow-lg xl:col-span-2">
+          <h2 class="text-xl font-semibold mb-4 text-slate-800">Patient Locations</h2>
+          <div class="w-full h-96 rounded-xl overflow-hidden relative">
+            <iframe src="{{ url_for('map_page') }}" class="absolute top-0 left-0 w-full h-full border-none"></iframe>
+          </div>
+        </section>
+
+        <!-- Revenue Division Card -->
+        <section class="bg-white p-6 rounded-2xl shadow-lg">
+          <h2 class="text-xl font-semibold mb-4 text-slate-800">Distribution by Revenue Division</h2>
+          <div class="h-96 flex items-center justify-center">
+            <canvas id="revenueDonutChart"></canvas>
+          </div>
+        </section>
+
+        <!-- Age Group Card -->
+        <section class="bg-white p-6 rounded-2xl shadow-lg xl:col-span-2">
+          <h2 class="text-xl font-semibold mb-4 text-slate-800">Patients by Age Group</h2>
+          <div class="h-80">
+            <canvas id="ageChart"></canvas>
+          </div>
+        </section>
+
+        <!-- AQI Range Card -->
+        <section class="bg-white p-6 rounded-2xl shadow-lg">
+          <h2 class="text-xl font-semibold mb-4 text-slate-800">Patients by AQI Range</h2>
+          <div class="h-80">
+            <canvas id="aqiLineChart"></canvas>
+          </div>
+        </section>
+      </div>
     </div>
+  </div>
 
-    <script>
+  <!-- Sidebar Toggle Script -->
+  <script>
         // Global Chart.js configuration for fonts
         Chart.defaults.font.family = "'Inter', sans-serif";
         Chart.defaults.font.weight = '500';
@@ -227,7 +338,30 @@
                 }
             }
         });
-    </script>
+  const sidebar = document.getElementById("sidebar");
+  const menuToggle = document.getElementById("menu-toggle");
+  const closeSidebar = document.getElementById("close-sidebar");
+  const overlay = document.getElementById("sidebar-overlay");
+
+  // Open Sidebar
+  menuToggle.addEventListener("click", () => {
+    sidebar.classList.remove("-translate-x-full");
+    overlay.classList.remove("hidden");
+  });
+
+  // Close Sidebar
+  closeSidebar.addEventListener("click", () => {
+    sidebar.classList.add("-translate-x-full");
+    overlay.classList.add("hidden");
+  });
+
+  // Click outside sidebar closes it
+  overlay.addEventListener("click", () => {
+    sidebar.classList.add("-translate-x-full");
+    overlay.classList.add("hidden");
+  });
+</script>
+
+
 </body>
 </html>
-
