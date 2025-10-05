@@ -3,7 +3,6 @@ import folium
 from folium.plugins import MarkerCluster
 import sqlite3
 
-API_KEY = "AIzaSyDWGTPprhkEHMnHQjqJtp4BaH5ZgC14XjQ"
 app = Flask(__name__)
 DB_PATH = "patients.db"
 
@@ -120,10 +119,8 @@ def map_page():
     marker_locations = []
     for p in patients:
         if p["lat"] and p["lng"]:
-            popup_text = f"<b>{p['name']}</b><br>Age: {p['age']}<br>Diagnosis: {p['diagnosis']}"
             folium.Marker(
                 [p["lat"], p["lng"]],
-                popup=popup_text,
                 icon=folium.Icon(color="green", icon="plus", prefix="fa")
             ).add_to(marker_cluster)
             marker_locations.append([p["lat"], p["lng"]])
@@ -134,8 +131,5 @@ def map_page():
 
     return m._repr_html_()
 
-import os
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # use Render's port
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run(debug=True)
